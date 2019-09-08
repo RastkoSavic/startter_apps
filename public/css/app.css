@@ -29600,3 +29600,8 @@ readers do not read off random characters that represent icons */
   width: auto;
 }
 
+.router-link-exact-active {
+  background: #3f51b5;
+  color: #fff !important;
+}
+
