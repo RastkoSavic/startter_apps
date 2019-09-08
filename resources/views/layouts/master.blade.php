@@ -73,7 +73,7 @@
                             with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <router-link to="dashboard" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon fas fa-tachometer-alt text-blue"></i>
                                 <p>
                                     Dashboard
                                     <span class="right badge badge-danger">New</span>
@@ -83,7 +83,7 @@
                         {{-- <li class="nav-item has-treeview menu-open"> --}}
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-cogs"></i>
+                                <i class="nav-icon fas fa-cogs text-green"></i>
                                 <p>
                                     Management
                                     <i class="right fas fa-angle-left"></i>
@@ -106,7 +106,7 @@
                         </li>
                         <li class="nav-item">
                             <router-link to="/profile" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
+                                <i class="nav-icon fas fa-user text-orange"></i>
                                 <p>
                                     Profile
                                     <span class="right badge badge-danger">New</span>
@@ -114,13 +114,17 @@
                             </router-link>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-power-off"></i>
+                            <a class="nav-link" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="nav-icon fas fa-power-off text-red"></i>
                                 <p>
-                                    Logout
-                                    <span class="right badge badge-danger">New</span>
+                                    {{ __('Logout') }}
                                 </p>
                             </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
                 </nav>
